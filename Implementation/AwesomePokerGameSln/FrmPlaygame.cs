@@ -84,6 +84,7 @@ namespace AwesomePokerGameSln {
     private void button1_Click(object sender, EventArgs e) {
       dealCards();
       label2.Text = hints[new Random().Next(0, hints.Length)];
+            if (bal <= 0) { button1.Enabled = false; };
     }
   }
 }
