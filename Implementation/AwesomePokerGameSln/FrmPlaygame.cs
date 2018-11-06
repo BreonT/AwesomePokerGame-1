@@ -29,7 +29,8 @@ namespace AwesomePokerGameSln {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
     }
-    string[] tips = { "If dealer wins, lower bet", "If you win, raise your bet", "Once hitting $0 balance, you can't continue" };
+    string[] hints = { "If dealer wins, lower bet", "If you win, raise your bet", "Once hitting $0 balance, you can't continue" };
+
     int bal = 500;
     int wins = 0;
     int bet = 50;
@@ -82,7 +83,7 @@ namespace AwesomePokerGameSln {
 
     private void button1_Click(object sender, EventArgs e) {
       dealCards();
-      label2.Text = tips[new Random().Next(0, tips.Length)];
+      label2.Text = hints[new Random().Next(0, hints.Length)];
     }
   }
 }
