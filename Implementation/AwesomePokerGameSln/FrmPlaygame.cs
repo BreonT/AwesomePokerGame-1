@@ -30,7 +30,8 @@ namespace AwesomePokerGameSln {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
     }
-    
+    string[] hints = { "If dealer wins, lower bet", "If you win, raise your bet", "Once hitting $0 balance, you can't continue" };
+
     int bal = 500;
     int wins = 0;
     int bet = 50;
@@ -38,7 +39,6 @@ namespace AwesomePokerGameSln {
         {
             if (radioButton1.Checked) { bet = 10; }
             if (radioButton2.Checked) { bet = 50; }
-            if (radioButton3.Checked) { bal = bal - 5; }
 
             if (x > y) { handwinloss.Text = "Dealer Wins"; bal = bal - bet; }
             if (x < y) { handwinloss.Text = " Player Wins"; wins++; bal = bal + bet; }
@@ -85,6 +85,8 @@ namespace AwesomePokerGameSln {
 
     private void button1_Click(object sender, EventArgs e) {
       dealCards();
+      label2.Text = hints[new Random().Next(0, hints.Length)];
+            if (bal <= 0) { button1.Enabled = false; };
     }
     
     // function to employ sound, when the player wins

@@ -42,7 +42,8 @@ namespace AwesomePokerGameSln {
             this.currBet = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            //this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -237,14 +238,22 @@ namespace AwesomePokerGameSln {
             this.radioButton2.Text = "Bet $50";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(644, 314);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 33);
+            this.label1.TabIndex = 20;
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(658, 715);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton3.Location = new System.Drawing.Point(439, 469);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 24);
-            this.radioButton3.TabIndex = 20;
+            this.radioButton3.Size = new System.Drawing.Size(55, 17);
+            this.radioButton3.TabIndex = 21;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Tip $5";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -254,9 +263,10 @@ namespace AwesomePokerGameSln {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1122, 507);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.currBet);
             this.Controls.Add(this.handswon);
             this.Controls.Add(this.wallet);
@@ -314,6 +324,7 @@ namespace AwesomePokerGameSln {
         private System.Windows.Forms.Label currBet;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButton3;
     }
 }
