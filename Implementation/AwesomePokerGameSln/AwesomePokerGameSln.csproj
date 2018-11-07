@@ -294,5 +294,8 @@
   <ItemGroup>
     <None Include="Resources\queen_of_spades2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play1.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using CardType = System.Tuple<int, int>;
 
 namespace AwesomePokerGameSln {
@@ -34,11 +35,12 @@ namespace AwesomePokerGameSln {
     int bal = 500;
     int wins = 0;
     int bet = 50;
+    int tip = 5;
     private void checkWin(HandType x, HandType y)
         {
             if (radioButton1.Checked) { bet = 10; }
             if (radioButton2.Checked) { bet = 50; }
-
+            if (radioButton3.Checked) { bal = bal - tip;  }
             if (x > y) { handwinloss.Text = "Dealer Wins"; bal = bal - bet; }
             if (x < y) { handwinloss.Text = " Player Wins"; wins++; bal = bal + bet; }
             if (x == y) { handwinloss.Text = "Draw"; }
@@ -66,7 +68,7 @@ namespace AwesomePokerGameSln {
         dealerCardPic.BackgroundImage = CardImageHelper.cardToBitmap(card);
       }
       playerHand = new Hand(cards);
-      lblHandType.Text = playerHand.getHandType().ToString();
+      lblHandType.Text ="P : " + playerHand.getHandType().ToString();
       Dlhandtype.Text = "D : " + dealerHand.getHandType().ToString();
       checkWin(playerHand.getHandType(), dealerHand.getHandType());
     }
@@ -84,6 +86,11 @@ namespace AwesomePokerGameSln {
     private void button1_Click(object sender, EventArgs e) {
       dealCards();
       label2.Text = hints[new Random().Next(0, hints.Length)];
+      if (playerHand.getHandType() < dealerHand.getHandType())
+            {
+                SoundPlayer audio = new SoundPlayer(AwesomePokerGameSln.Properties.Resources.play1);
+                audio.Play();
+            }
     }
   }
 }
