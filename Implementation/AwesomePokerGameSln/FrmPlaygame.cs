@@ -40,6 +40,7 @@ namespace AwesomePokerGameSln {
         {
             if (radioButton1.Checked) { bet = 10; }
             if (radioButton2.Checked) { bet = 50; }
+            if (radioButton4.Checked) { bet = 500; }
             if (radioButton3.Checked) { bal = bal - tip;  }
             if (x > y) { handwinloss.Text = "Dealer Wins"; bal = bal - bet; }
             if (x < y) { handwinloss.Text = " Player Wins"; wins++; bal = bal + bet; }
@@ -91,8 +92,17 @@ namespace AwesomePokerGameSln {
                 SoundPlayer audio = new SoundPlayer(AwesomePokerGameSln.Properties.Resources.play1);
                 audio.Play();
             }
+      if (bal <= 0)
+            {
+                button1.Enabled = false;
+            }
     }
-  }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
 
 
